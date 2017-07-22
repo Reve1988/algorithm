@@ -3,8 +3,8 @@ package org.reve.algorithm.sort.exchange;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SelectionLoopSort extends SelectionSort {
-	private static Logger LOGGER = LoggerFactory.getLogger(SelectionLoopSort.class);
+public class SelectionLoopSort extends ExchangeSort {
+	private final static Logger LOGGER = LoggerFactory.getLogger(SelectionLoopSort.class);
 
 	public static int[] sort(int[] array) {
 		if (array == null || array.length <= 1) {
