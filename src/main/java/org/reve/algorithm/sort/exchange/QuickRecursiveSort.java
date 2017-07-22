@@ -3,8 +3,8 @@ package org.reve.algorithm.sort.exchange;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class QuickSort extends ExchangeSort {
-	private static final Logger LOGGER = LoggerFactory.getLogger(QuickSort.class);
+public class QuickRecursiveSort extends ExchangeSort {
+	private static final Logger LOGGER = LoggerFactory.getLogger(QuickRecursiveSort.class);
 
 	public static int[] sort(int[] array) {
 		if (array == null || array.length <= 1) {

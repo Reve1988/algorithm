@@ -36,7 +36,7 @@ org.reve.algorithm.sort.exchange.SelectionSortTest
 
 #### 2) 퀵 정렬 알고리즘
 ##### 퀵 정렬 알고리즘의 예제
-org.reve.algorithm.sort.exchange.QuickSort
+org.reve.algorithm.sort.exchange.QuickSortTest
 <pre>
 정렬 준비----------
 [55, 153, 4, 63, 75, 23, 53, 66, 22, 10]

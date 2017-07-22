@@ -16,7 +16,7 @@ public class QuickSortTest {
 	}
 
 	@Test
-	public void testQuickSort() {
+	public void testQuickLoopSort() {
 		// given
 		LOGGER.info("정렬 준비----------");
 		LOGGER.info("{}", testArray);
@@ -24,7 +24,24 @@ public class QuickSortTest {
 		// when
 		LOGGER.info("정렬 시작----------");
 		long startTime = System.currentTimeMillis();
-		QuickSort.sort(testArray);
+		QuickLoopSort.sort(testArray);
+		long endTime = System.currentTimeMillis();
+
+		// then
+		LOGGER.info("정렬 완료---------- {}ms", endTime - startTime);
+		LOGGER.info("{}\n", testArray);
+	}
+
+	@Test
+	public void testQuickRecursiveSort() {
+		// given
+		LOGGER.info("정렬 준비----------");
+		LOGGER.info("{}", testArray);
+
+		// when
+		LOGGER.info("정렬 시작----------");
+		long startTime = System.currentTimeMillis();
+		QuickRecursiveSort.sort(testArray);
 		long endTime = System.currentTimeMillis();
 
 		// then
