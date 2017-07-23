@@ -32,7 +32,7 @@ org.reve.algorithm.sort.exchange.SelectionSortTest
 - 자료의 교환이 계속되므로 안정성이 없음
 
 
-** 안정성(stability) : 동일한 데이터에 대해 입력한 순서대로 정렬되면 안정성이 있다고 한다
+** 안정성(stability) : 동일한 데이터에 대해 입력한 순서대로 정렬되면 안정성이 있다고 한다.
 
 #### 2) 퀵 정렬 알고리즘
 ##### 퀵 정렬 알고리즘의 예제
@@ -55,16 +55,28 @@ org.reve.algorithm.sort.exchange.QuickSortTest
 [4, 10, 22, 23, 53, 55, 63, 66, 75, 153]
 </pre>
 ##### 퀵 정렬 알고리즘의 특징
-- 평균 : O(nlogn)
-- 최악 : O(n^2)
+- 평균 : O(nlogn) - 피벗값이 지속적으로 자료의 중앙값이 될 때
+- 최악 : O(n^2) - 이미 정렬된 자료에서 피벗값이 계속 끝 값이 될 때
 - 정렬 전 자료의 상태에 따라 효율성의 차이가 큼
 - 전체 효율성을 볼 때 상당히 우수한 성능
 - 자료의 교환이 계속되므로 안정성이 없음
-- 자료의 중간값을 피봇으로 사용하면 효율이 큼(중간값을 알 수 있다면)
+- 자료의 중간값을 피벗으로 사용하면 효율이 큼(중간값을 알 수 있다면)
+##### 퀵 정렬을 위한 최초의 피벗값 찾기
+###### [1] Random
+org.reve.algorithm.sort.exchange.QuickRecursiveRandomPivotSort
+> 1. 렌덤하게 피벗을 뽑는다.
+> 2. 피벗을 기준으로 피벗보다 작은값은 왼쪽으로 피벗보다 큰 값은 오른쪽으로 보낸다.
+> - 랜덤값에 따라서 O(n) ~ O(n^2) 사이의 성능을 갖는다.
+###### [2] Median
+org.reve.algorithm.sort.exchange.QuickRecursiveMedianPivotSort
+> 1. 왼쪽, 오른쪽, 중간에 위치한 값들 중 중간값을 피벗으로 한다
+> 2. 피벗을 기준으로 피벗보다 작은값은 왼쪽으로 피벗보다 큰 값은 오른쪽으로 보낸다.  
 
 #### 3) 버블 정렬 알고리즘
 ##### 버블 정렬 알고리즘의 예제
+org.reve.algorithm.sort.exchange.MergeSortTest
 ##### 버블 정렬 알고리즘의 특징
+
 
 ### 2. 병합
 #### 1) 병합 정렬 알고리즘

@@ -48,4 +48,38 @@ public class QuickSortTest {
 		LOGGER.info("정렬 완료---------- {}ms", endTime - startTime);
 		LOGGER.info("{}\n", testArray);
 	}
+
+	@Test
+	public void testQuickRecursiveRandomPivotSort() {
+		// given
+		LOGGER.info("정렬 준비----------");
+		LOGGER.info("{}", testArray);
+
+		// when
+		LOGGER.info("정렬 시작----------");
+		long startTime = System.currentTimeMillis();
+		QuickRecursiveRandomPivotSort.sort(testArray);
+		long endTime = System.currentTimeMillis();
+
+		// then
+		LOGGER.info("정렬 완료---------- {}ms", endTime - startTime);
+		LOGGER.info("{}\n", testArray);
+	}
+
+	@Test
+	public void testQuickRecursiveMedianPivotSort() {
+		// given
+		LOGGER.info("정렬 준비----------");
+		LOGGER.info("{}", testArray);
+
+		// when
+		LOGGER.info("정렬 시작----------");
+		long startTime = System.currentTimeMillis();
+		QuickRecursiveMedianPivotSort.sort(testArray);
+		long endTime = System.currentTimeMillis();
+
+		// then
+		LOGGER.info("정렬 완료---------- {}ms", endTime - startTime);
+		LOGGER.info("{}\n", testArray);
+	}
 }
