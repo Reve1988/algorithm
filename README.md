@@ -61,7 +61,7 @@ org.reve.algorithm.sort.exchange.QuickSortTest
 - 전체 효율성을 볼 때 상당히 우수한 성능
 - 자료의 교환이 계속되므로 안정성이 없음
 - 자료의 중간값을 피벗으로 사용하면 효율이 큼(중간값을 알 수 있다면)
-##### 퀵 정렬을 위한 최초의 피벗값 찾기
+##### 퀵 정렬 최적화를 위한 최초의 피벗값 찾기
 ###### [1] Random
 org.reve.algorithm.sort.exchange.QuickRecursiveRandomPivotSort
 > 1. 렌덤하게 피벗을 뽑는다.
