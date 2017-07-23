@@ -16,15 +16,7 @@ public class QuickLoopSort extends ExchangeSort {
 		Stack<PartitionRange> partitionStack = new Stack<>();
 		partitionStack.push(new PartitionRange(0, array.length - 1));
 
-		return sort(array, partitionStack);
-	}
-
-	private static int[] sort(int[] array, Stack<PartitionRange> partitionStack) {
-		while (true) {
-			if (partitionStack.empty()) {
-				break;
-			}
-
+		while (!partitionStack.empty()) {
 			PartitionRange partitionRange = partitionStack.pop();
 			if (partitionRange.getStart() >= partitionRange.getEnd()) {
 				continue;
