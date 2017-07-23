@@ -5,8 +5,6 @@
             <Pattern>%msg%n</Pattern>
         </layout>
     </appender>
-
-    <logger name="org.reve" level="DEBUG"/>
     
     <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
