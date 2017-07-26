@@ -94,6 +94,15 @@ public class SortValidationTest {
 		assertTrue(isSorted(testArray));
 	}
 
+	@Test
+	public void testMergeSortValid() {
+		// when
+		testArray = QuickRecursiveMedianPivotSort.sort(testArray);
+
+		// then
+		assertTrue(isSorted(testArray));
+	}
+
 	private boolean isSorted(int[] array) {
 		for (int i = 0; i < array.length - 1; i++) {
 			if (array[i] > array[i + 1]) {
