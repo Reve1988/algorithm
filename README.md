@@ -72,13 +72,16 @@ org.reve.algorithm.sort.exchange.QuickSortTest
 
 #### 3) 버블 정렬 알고리즘
 ##### 버블 정렬 알고리즘의 예제
-org.reve.algorithm.sort.exchange.MergeSortTest
 ##### 버블 정렬 알고리즘의 특징
 
 
 ### 2. 병합
 #### 1) 병합 정렬 알고리즘
 ##### 병합 정렬 알고리즘의 예제
+org.reve.algorithm.sort.exchange.MergeSortTest
+<pre>
+
+</pre>
 ##### 병합 정렬 알고리즘의 특징
 
 ### 3. 분배
