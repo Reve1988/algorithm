@@ -3,24 +3,34 @@ package org.reve.algorithm.sort.exchange;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class SelectionRecursiveSort extends SelectionSort {
-	private static Logger LOGGER = LoggerFactory.getLogger(SelectionRecursiveSort.class);
+public class SelectionRecursiveSort extends ExchangeSort {
+	private final static Logger LOGGER = LoggerFactory.getLogger(SelectionRecursiveSort.class);
 
-	public static int[] sort(int[] array, int baseIndex) {
-		LOGGER.info("{}", array);
-
-		int nextBaseIndex = baseIndex + 1;
-		int lastBaseIndex = array.length - 2;
-		int minIndex = findMinIndex(array, baseIndex, baseIndex + 1);
-		if (baseIndex != minIndex) {
-			array = swap(array, baseIndex, minIndex);
-		}
-
-		if (baseIndex >= lastBaseIndex) {
+	public static int[] sort(int[] array) {
+		if (array == null || array.length <= 1) {
 			return array;
 		}
 
-		return sort(array, nextBaseIndex);
+		return sort(array, 0);
+	}
+
+	private static int[] sort(int[] array, int baseIndex) {
+		LOGGER.info("{}", array);
+
+		int minIndex = findMinIndex(array, baseIndex);
+		if (minIndex != baseIndex) {
+			array = swap(array, baseIndex, minIndex);
+		}
+
+		if (baseIndex >= array.length - 2) {
+			return array;
+		}
+
+		return sort(array, baseIndex + 1);
+	}
+
+	private static int findMinIndex(int[] array, int baseIndex) {
+		return findMinIndex(array, baseIndex, baseIndex + 1);
 	}
 
 	private static int findMinIndex(int[] array, int baseIndex, int compareIndex) {

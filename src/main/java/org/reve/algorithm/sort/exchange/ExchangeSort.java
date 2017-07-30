@@ -1,10 +1,16 @@
 package org.reve.algorithm.sort.exchange;
 
-public abstract class SelectionSort {
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public abstract class ExchangeSort {
+	private static final Logger LOGGER = LoggerFactory.getLogger(QuickRecursiveSort.class);
+
 	static int[] swap(int[] array, int indexA, int indexB) {
 		int indexAValue = array[indexA];
 		array[indexA] = array[indexB];
 		array[indexB] = indexAValue;
+		LOGGER.info("{}", array);
 
 		return array;
 	}
