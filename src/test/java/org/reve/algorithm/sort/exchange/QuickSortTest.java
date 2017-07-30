@@ -12,7 +12,7 @@ public class QuickSortTest {
 
 	@Before
 	public void setUp() {
-		testArray = new int[]{55, 153, 4, 63, 75, 23, 53, 66, 22, 10};
+		testArray = new int[]{55, 153, 4, 63, 75, 23, 53, 66, 22, 10, 11};
 	}
 
 	@Test

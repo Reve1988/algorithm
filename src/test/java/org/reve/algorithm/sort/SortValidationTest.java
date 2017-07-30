@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.reve.algorithm.sort.exchange.*;
+import org.reve.algorithm.sort.merge.MergeSort;
 import org.slf4j.LoggerFactory;
 
 import java.util.Random;
@@ -97,7 +98,7 @@ public class SortValidationTest {
 	@Test
 	public void testMergeSortValid() {
 		// when
-		testArray = QuickRecursiveMedianPivotSort.sort(testArray);
+		testArray = MergeSort.sort(testArray);
 
 		// then
 		assertTrue(isSorted(testArray));
