@@ -1,13 +1,16 @@
 package org.reve.algorithm.backtracking;
 
+import java.util.List;
+
 public class Maze {
-	public static final int PATH = 0;
-	public static final int WALL = 1;
-	public static final int VISITED = 2;
+	public static final char PATH = ' ';
+	public static final char WALL = '*';
+	public static final char VISITED = '0';
 
-	private int[][] maze;
+	private char[][] origin;
+	private char[][] maze;
 
-	public Maze(int[][] maze) {
+	public Maze(char[][] maze) {
 		if (maze == null) {
 			throw new IllegalArgumentException("Maze must not be null.");
 		}
@@ -20,6 +23,7 @@ public class Maze {
 			throw new IllegalArgumentException("Maze must not be empty.");
 		}
 
+		this.origin = copy(maze);
 		this.maze = maze;
 	}
 
@@ -35,11 +39,59 @@ public class Maze {
 				&& getStatus(position) == PATH;
 	}
 
-	public int getStatus(Position position) {
+	public char getStatus(Position position) {
 		return maze[position.getX()][position.getY()];
 	}
 
-	public void mark(Position position, int marker) {
+	public void mark(Position position, char marker) {
 		maze[position.getX()][position.getY()] = marker;
+	}
+
+	public void print() {
+		System.out.println("방문 이력 -------------------------------------------------");
+		for (char[] list : maze) {
+			for (char val : list) {
+				System.out.print(val + " ");
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+
+	public void printOrigin() {
+		System.out.println("미로 원본 -------------------------------------------------");
+		for (char[] list : origin) {
+			for (char val : list) {
+				System.out.print(val + " ");
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+
+	public void print(List<Position> path) {
+		char[][] temp = copy(origin);
+		for (Position position : path) {
+			temp[position.getX()][position.getY()] = VISITED;
+		}
+
+		System.out.println("방문 결과 -------------------------------------------------");
+		for (char[] list : temp) {
+			for (char val : list) {
+				System.out.print(val + " ");
+			}
+			System.out.println();
+		}
+		System.out.println("----------------------------------------------------------");
+	}
+
+	private char[][] copy(char[][] arr) {
+		char[][] temp = new char[arr.length][arr[0].length];
+
+		for (int i = 0; i < temp.length; i++) {
+			temp[i] = arr[i].clone();
+		}
+
+		return temp;
 	}
 }

@@ -6,22 +6,31 @@ import java.util.Stack;
 
 public class MazeBackTracking {
 	public static List<Position> find(Maze maze, Position start, Position end) {
-		Stack<Position> path = findPath(maze, new Stack<>(), start, end);
+		Stack<Position> path = new Stack<>();
+		findPath(maze, path, start, end);
 
 		return new ArrayList<>(path);
 	}
 
-	private static Stack<Position> findPath(Maze maze, Stack<Position> path, Position current, Position end) {
+	private static boolean findPath(Maze maze, Stack<Position> path, Position current, Position end) {
 		maze.mark(current, Maze.VISITED);
 		path.push(current);
 
 		if (current.equals(end)) {
-			return path;
+			return true;
 		}
 
 		for (Position next : getMovablePositionList(maze, current)) {
-			path = MazeBackTracking.findPath(maze, path, next, end);
+			boolean isFound = MazeBackTracking.findPath(maze, path, next, end);
+
+			if (isFound) {
+				return true;
+			} else {
+				path.pop();
+			}
 		}
+
+		return false;
 	}
 
 	private static List<Position> getMovablePositionList(Maze maze, Position current) {
